@@ -1,7 +1,11 @@
+import Form from "./components/Form.tsx";
+
 function App() {
   return (
     <>
-      <div className="App">App</div>
+      <div className="App">
+        <Form />
+      </div>
     </>
   );
 }
