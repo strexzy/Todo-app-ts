@@ -1,0 +1,8 @@
+.error_todo {
+  width: 80%;
+  height: 90vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

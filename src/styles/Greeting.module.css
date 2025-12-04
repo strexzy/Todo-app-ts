@@ -1,0 +1,65 @@
+.greeting {
+  background-color: var(--bg-secondary-color);
+  height: 90vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.greeting__inner_wrapper {
+  background-color: var(--bg-primary-color);
+
+  max-width: calc(var(--base-size) * 175);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: calc(var(--base-size) * 5);
+
+  padding: calc(var(--base-size) * 14);
+
+  border: 1px solid var(--component-primary-color);
+  border-radius: 10px;
+}
+
+.greeting__title {
+  color: var(--text-primary-color);
+  font-size: calc(var(--base-size) * 8);
+  text-align: center;
+}
+
+.greeting__subtitle {
+  color: var(--text-secondary-color);
+  font-size: calc(var(--base-size) * 5);
+  text-align: center;
+}
+
+.greeting__stack {
+  max-width: 400px;
+
+  list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: calc(var(--base-size) * 10);
+}
+
+.greeting__stack__element {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--base-size) * 2);
+}
+
+.greeting__stack__element__name {
+  color: var(--text-primary-color);
+  font-size: calc(var(--base-size) * 10);
+}
+
+.greeting__stack__element__icon {
+  height: calc(var(--base-size) * 10);
+}

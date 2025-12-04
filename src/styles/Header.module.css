@@ -1,0 +1,35 @@
+.header {
+  background-color: var(--bg-primary-color);
+
+  height: 10vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-bottom: 1px solid var(--component-primary-color);
+}
+
+.header__inner_wrapper {
+  max-width: 1600px;
+  width: 100%;
+
+  margin: 0 auto;
+  padding: calc(var(--base-size) * 10) 0;
+}
+
+.header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: calc(var(--base-size) * 15);
+}
+
+.header__nav_link {
+  color: var(--text-primary-color);
+}
+
+.nav_link__active {
+  color: var(--text-secondary-color);
+}

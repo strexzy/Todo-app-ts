@@ -1,0 +1,113 @@
+.form {
+  background-color: var(--bg-secondary-color);
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__inner_wrapper {
+  background-color: var(--bg-primary-color);
+  max-width: calc(var(--base-size) * 175);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: calc(var(--base-size) * 5);
+  padding: calc(var(--base-size) * 14);
+  border: 1px solid var(--component-primary-color);
+  border-radius: 10px;
+}
+
+.form__title__label,
+.form__body__label {
+  color: var(--text-primary-color);
+  font-size: calc(var(--base-size) * 6);
+  margin-bottom: calc(var(--base-size) * 2);
+}
+
+.form__title__input,
+.form__body__input {
+  width: 100%;
+  max-width: calc(var(--base-size) * 200);
+  padding: calc(var(--base-size) * 3);
+  font-size: calc(var(--base-size) * 4);
+  border: 1px solid var(--component-primary-color);
+  border-radius: 8px;
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form__title__input:focus,
+.form__body__input:focus {
+  border-color: var(--accent-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+.form__title__error,
+.form__body__error {
+  color: var(--text-secondary-color);
+  font-size: calc(var(--base-size) * 3);
+  margin-top: calc(var(--base-size) * 2);
+}
+
+.form__submit {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-size: calc(var(--base-size) * 5);
+  font-weight: 600;
+  color: var(--text-light-color);
+  background: var(--button-primary-color);
+  border: none;
+  border-radius: 8px;
+  padding: calc(var(--base-size) * 4) calc(var(--base-size) * 8);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 200px;
+  margin-top: calc(var(--base-size) * 5);
+}
+
+.form__submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.form__submit:active {
+  transform: scale(0.98);
+}
+
+[data-theme="dark"] .form__submit {
+  background: var(--button-primary-color);
+  color: var(--text-light-color);
+  box-shadow: 0 0 15px rgba(0, 176, 255, 0.4);
+}
+
+[data-theme="light"] .form__submit {
+  background: var(--button-primary-color);
+  color: var(--text-light-color);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+}
+
+/* Улучшенная анимация псевдоэлемента */
+.form__submit::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease, transform 0.3s ease;
+}
+
+.form__submit:hover::after {
+  left: 100%;
+  transform: skewX(0);
+}
