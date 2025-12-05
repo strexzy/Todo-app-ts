@@ -1,13 +1,5 @@
-import Form from "./components/Form.tsx";
-
 function App() {
-  return (
-    <>
-      <div className="App">
-        <Form />
-      </div>
-    </>
-  );
+  return <></>;
 }
 
 export default App;

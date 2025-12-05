@@ -9,6 +9,8 @@ export interface ThemeContextType {
 
 // TodoContext types
 
+export type LoadingStatusType = boolean;
+
 export type ID = string;
 
 export interface Todo {
@@ -19,6 +21,7 @@ export interface Todo {
 }
 
 export interface TodoContextType {
+  todo: Todo | null;
   todoList: Todo[];
   fetchData: () => Promise<void>;
   postData: (todoTitle: string, todoBody: string) => Promise<void>;
@@ -28,4 +31,5 @@ export interface TodoContextType {
     todoBody: string,
     todoStatus: boolean,
   ) => Promise<void>;
+  fetchSingleTodo: (id: ID) => Promise<void>;
 }

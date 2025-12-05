@@ -6,6 +6,7 @@ const TodoContext = createContext<TodoContextType | undefined>(undefined);
 
 export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
   const [todoList, setTodoList] = useState<Todo[]>([]);
+  const [todo, setTodo] = useState<Todo | null>(null);
 
   const url = "https://68da1f2623ebc87faa2f03cb.mockapi.io/todos";
 
@@ -13,6 +14,15 @@ export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
     try {
       const response = await axios.get<Todo[]>(url);
       setTodoList(response.data);
+    } catch (error) {
+      alert(error);
+    }
+  };
+
+  const fetchSingleTodo = async (id: ID): Promise<void> => {
+    try {
+      const response = await axios.get<Todo>(url + `/${id}`);
+      setTodo(response.data);
     } catch (error) {
       alert(error);
     }
@@ -59,7 +69,14 @@ export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <TodoContext.Provider
-      value={{ todoList, fetchData, postData, switchStatus }}
+      value={{
+        todo,
+        todoList,
+        fetchData,
+        postData,
+        switchStatus,
+        fetchSingleTodo,
+      }}
     >
       {children}
     </TodoContext.Provider>
